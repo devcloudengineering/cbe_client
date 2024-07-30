@@ -5,6 +5,7 @@ import ProtectedRoute from "./components/Login/ProtectedRoute";
 import PanelDashboard from "./components/PanelDashboard/PanelDashboard";
 import "./index.css";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { Spinner } from "@nextui-org/react";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,7 +18,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:3008/combustible/validarjwt",
+        "https://combustible-node-app-e4e4349af549.herokuapp.com/validarjwt",
         {
           method: "POST",
           headers: {
@@ -47,7 +48,13 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <Spinner
+        label="Cargando"
+        color="warning"
+        className="h-screen flex justify-center"
+      />
+    );
   }
 
   return (

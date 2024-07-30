@@ -12,7 +12,7 @@ export default function HeaderDashboard() {
   return (
     <Navbar isBordered>
       <NavbarBrand>
-        <p className="font-bold text-inherit italic text-xl">
+        <p className="font-bold text-inherit italic text-2xl text-sky-600">
           Servicios Corporativos
         </p>
       </NavbarBrand>

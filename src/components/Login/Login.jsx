@@ -17,7 +17,7 @@ const Login = ({ setIsAuthenticated }) => {
     try {
       console.log(data);
       const response = await fetch(
-        "https://enormous-raven-instantly.ngrok-free.app/combustible/login",
+        "https://combustible-node-app-e4e4349af549.herokuapp.com/combustible/login",
         {
           method: "POST",
           headers: {
@@ -29,6 +29,7 @@ const Login = ({ setIsAuthenticated }) => {
 
       if (!response.ok) {
         throw new Error("Compruebe sus datos");
+        reset();
       }
 
       const result = await response.json();
@@ -42,6 +43,7 @@ const Login = ({ setIsAuthenticated }) => {
       }
     } catch (error) {
       setSubmitStatus(`Compruebe sus credenciales`);
+      reset();
     }
   };
 

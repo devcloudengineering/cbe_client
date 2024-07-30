@@ -18,7 +18,9 @@ const Combustible = () => {
 
   const recuperarData = async () => {
     try {
-      const response = await fetch("http://localhost:3008/combustible/datos");
+      const response = await fetch(
+        "https://combustible-node-app-e4e4349af549.herokuapp.com/combustible/datos"
+      );
       if (!response.ok) {
         throw new Error("Error al obtener los datos");
       }
