@@ -4,7 +4,13 @@ import Login from "./components/Login/Login";
 import ProtectedRoute from "./components/Login/ProtectedRoute";
 import PanelDashboard from "./components/PanelDashboard/PanelDashboard";
 import "./index.css";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+  HashRouter,
+} from "react-router-dom";
 import { Spinner } from "@nextui-org/react";
 
 function App() {
@@ -58,7 +64,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<PanelDashboard />} />
         <Route
@@ -75,7 +81,7 @@ function App() {
         />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
